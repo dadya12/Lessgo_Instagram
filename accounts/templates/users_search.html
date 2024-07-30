@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mt-4">
+
+        {% for user_obj in users %}
+            <a href="{% url 'accounts:user_detail' user_obj.pk %}" class="d-flex border-2 border-bottom p-3 text-decoration-none text-secondary-emphasis">
+                <div class="mx-5 align-self-center">
+                    <div class="d-inline-block rounded-circle overflow-hidden" style="width: 60px; height: 60px; ">
+                        <img src="{{ user_obj.avatar.url }}" class="object-fit-cover w-100 h-100" alt="...">
+                    </div>
+                </div>
+                <h2 class="fw-lighter" style="font-size: 27px; margin-top: 10px"> - {{ user_obj.username }}</h2>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

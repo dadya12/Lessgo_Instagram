@@ -121,3 +121,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 AUTH_USER_MODEL = 'accounts.MyUser'
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'webapp:home'
+LOGOUT_REDIRECT_URL = 'accounts:login'

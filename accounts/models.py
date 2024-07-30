@@ -19,4 +19,4 @@ class MyUser(AbstractUser):
     following_count = models.PositiveIntegerField(default=0, verbose_name='Following')
 
     def __str__(self):
-        return f'{self.username}{self.gender}'
+        return f'{self.username}'

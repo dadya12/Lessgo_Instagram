@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user_obj.username }}{% endblock %}
+
+
+{% block navbar %}
+    
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="d-flex" style="margin-bottom: 60px; margin-top: 60px">
+        <div class="mx-5 align-self-center">
+            <div class="d-inline-block rounded-circle overflow-hidden" style="width: 130px; height: 130px; ">
+                <img src="{{ user_obj.avatar.url }}" class="object-fit-cover w-100 h-100" alt="...">
+            </div>
+        </div>
+        <div class="mx-5 align-self-center">
+            <div class="d-flex">
+                <h2 class="fw-lighter" style="font-size: 25px">{{ user_obj.username }}</h2>
+
+                <a class="btn btn-outline-dark align-self-center ms-3"
+                   href="{% url 'accounts:user_update' user_obj.pk %}"
+                   role="button" style="font-size: 15px">Редактировать профиль</a>
+                <a class="btn btn-outline-dark align-self-center ms-3"
+                   href="{% url 'accounts:password' user_obj.pk %}"
+                   role="button" style="font-size: 15px">Смена пароля</a>
+                
+            </div>
+            <p class="fw-light">
+                <span class="me-5">{{ user_obj.publication_count }} публикации</span>
+                <span class="me-5">{{ user_obj.subscription_count }} подписчиков</span>
+                <span class="me-5">Подписки: {{ user_obj.following_count }}</span>
+            </p>
+            <p style="margin: auto">Имя: {{ user_obj.get_full_name }}</p>
+            <p style="margin: auto">Почта: {{ user_obj.email }}</p>
+            <p style="margin: auto">Информация: {{ user_obj.info }}</p>
+            <p style="margin: auto">Телефон: {{ user_obj.phone }}</p>
+            {#            {% if user_obj != request.user %}#}
+            {#                <form action="{% url 'accounts:user_subscription' user_obj.pk %}" method="post">#}
+            {#                    {% csrf_token %}#}
+            {#                    <button type="submit" class="btn btn-primary">#}
+            {#                        {% if user_obj in request.user.subscriptions_users.all %}#}
+            {#                            Отписаться#}
+            {#                        {% else %}#}
+            {#                            Подписаться#}
+            {#                        {% endif %}#}
+            {#                    </button>#}
+            {#                </form>#}
+            {#            {% endif %}#}
+        </div>
+    </div>
+
+
+    <div class="row row-cols-3 justify-content-between">
+
+        <a href=""
+           class="col px-0 btn btn-outline-success d-flex justify-content-center"
+           style="width: 400px; height: 400px">
+            <i class="bi bi-plus-lg fs-1 align-self-center"></i>
+        </a>
+
+        {% for publication in user_obj.posts.all %}
+            <a href="#" class="col  d-inline-block px-0" style="width: 400px; height: 400px">
+                <img src="{{ publication.picture.url }}" class="w-100 h-100 object-fit-cover">
+            </a>
+        {% endfor %}
+
+
+    </div>
+
+
+
+{% endblock %}
