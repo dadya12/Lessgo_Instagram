@@ -1,11 +1,47 @@
 {% extends 'base.html' %}
 
-{% block navbar %}
-    
-{% endblock %}
-
-<title>{% block title %}Instagram{% endblock %}</title>
-
 {% block content %}
+    {% for p in posts %}
+        <div class="card my-5">
+            <div class="card-header d-flex justify-content-between">
+                <div>
+                    <a href="{% url 'accounts:user_detail' p.author.pk %}"
+                       class="d-flex p-3 text-decoration-none text-secondary-emphasis">
+
+                        <div class="mx-4 align-self-center">
+                            <div class="d-inline-block rounded-circle overflow-hidden"
+                                 style="width: 50px; height: 50px">
+                                <img src="{{ p.author.avatar.url }}" class="object-fit-cover w-100 h-100"
+                                     alt="...">
+                            </div>
+                        </div>
+                        <h2 class="fw-lighter">{{ p.author.username }}</h2>
+                    </a>
+                </div>
+                
+            </div>
+            <img src="{{ p.image.url }}" class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <div class="card-title">
+                    <p class="card-text my-2">Лайки: <span id="likes_count_{{ p.pk }}">{{ p.users_likes.count }}</span></p>
+                        {% if request.user.is_authenticated %}
+                            <a class="btn likes" href="{% url 'webapp:user_likes' p.pk %}" data-span-count-id="likes_count_{{ p.pk }}">
+                                {% if request.user in p.users_likes.all %}<i class="bi bi-heart-fill" style="color: red; font-size: 20px"></i>
+                                {% else %}<i class="bi bi-heart" style="font-size: 20px"></i>
+                                {% endif %}</a>
+                        {% endif %}
+
+                    <a class="btn comments" href="" style="font-size: 20px"><i class="bi bi-chat"></i></a>
+                </div>
+                <p class="card-text">{{ p.description }}</p>
+                <p class="card-text"><small class="text-body-secondary">{{ p.created }}</small></p>
+            </div>
+            <div class="card-footer">
+                <a href="" style="text-decoration: none">Добавить комментарий</a>
+            </div>
+        </div>
+    {% endfor %}
+
 
 {% endblock %}

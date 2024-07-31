@@ -17,6 +17,8 @@ class MyUser(AbstractUser):
     publication_count = models.PositiveIntegerField(default=0, verbose_name='Publications')
     subscription_count = models.PositiveIntegerField(default=0, verbose_name='Subscriptions')
     following_count = models.PositiveIntegerField(default=0, verbose_name='Following')
+    subscription_users = models.ManyToManyField('accounts.MyUser', related_name='sub_users',
+                                                verbose_name='Subscriptions')
 
     def __str__(self):
         return f'{self.username}'

@@ -4,7 +4,7 @@
 
 
 {% block navbar %}
-    
+
 {% endblock %}
 
 
@@ -26,7 +26,7 @@
                 <a class="btn btn-outline-dark align-self-center ms-3"
                    href="{% url 'accounts:password' user_obj.pk %}"
                    role="button" style="font-size: 15px">Смена пароля</a>
-                
+
             </div>
             <p class="fw-light">
                 <span class="me-5">{{ user_obj.publication_count }} публикации</span>
@@ -37,6 +37,9 @@
             <p style="margin: auto">Почта: {{ user_obj.email }}</p>
             <p style="margin: auto">Информация: {{ user_obj.info }}</p>
             <p style="margin: auto">Телефон: {{ user_obj.phone }}</p>
+            <a href="{% url 'webapp:post_create' %}"
+               class="btn btn-outline-success align-self-center"
+               role="button" style="font-size: 15px; margin-top: 20px">Добавить публикацию</a>
             {#            {% if user_obj != request.user %}#}
             {#                <form action="{% url 'accounts:user_subscription' user_obj.pk %}" method="post">#}
             {#                    {% csrf_token %}#}
@@ -55,18 +58,11 @@
 
     <div class="row row-cols-3 justify-content-between">
 
-        <a href=""
-           class="col px-0 btn btn-outline-success d-flex justify-content-center"
-           style="width: 400px; height: 400px">
-            <i class="bi bi-plus-lg fs-1 align-self-center"></i>
-        </a>
-
-        {% for publication in user_obj.posts.all %}
+        {% for p in user_obj.posts.all %}
             <a href="#" class="col  d-inline-block px-0" style="width: 400px; height: 400px">
-                <img src="{{ publication.picture.url }}" class="w-100 h-100 object-fit-cover">
+                <img src="{{ p.image.url }}" class="w-100 h-100 object-fit-cover">
             </a>
         {% endfor %}
-
 
     </div>
 

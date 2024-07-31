@@ -29,13 +29,19 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Вход</a>
                 {% else %}
                     {% if  user_obj != request.user %}
-                        <a href="{% url 'accounts:user_detail' request.user.id %}"
-                           class="me-3 text-dark" style="font-size: 35px"><i class="bi bi-person"></i></a>
+                        <div class="d-inline-block rounded-circle overflow-hidden"
+                             style="width: 65px; height: 65px">
+                            <a href="{% url 'accounts:user_detail' request.user.id %}"
+                               class="me-3 text-dark" style="font-size: 35px">
+                                <img src="{{ request.user.avatar.url }}" class="object-fit-cover w-100 h-100"
+                                     alt="...">
+                            </a>
+                        </div>
                     {% else %}
                         <form action="{% url 'accounts:logout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-link text-success-emphasis text-decoration-none"
-                            style="font-size: 35px"><i class="bi bi-door-open"></i></button>
+                                    style="font-size: 35px"><i class="bi bi-door-open"></i></button>
                         </form>
                     {% endif %}
                 {% endif %}
