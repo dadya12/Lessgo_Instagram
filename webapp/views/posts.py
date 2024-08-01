@@ -16,7 +16,7 @@ class LikePostsUser(LoginRequiredMixin, View):
         return redirect('webapp:home')
 
 
-class PostListView(ListView):
+class PostListView(ListView, LoginRequiredMixin):
     template_name = 'home.html'
     context_object_name = 'posts'
 

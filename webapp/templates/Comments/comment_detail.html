@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Comments{% endblock %}
+{% block content %}
+    <div class="col" style="margin-top: 30px">
+        {% for comment in comments %}
+            <div class="card" style="margin-bottom: 30px; border: solid 2px; border-radius: 20px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ comment.author }} - Автор</h5>
+                    <p class="card-text">{{ comment.text }}</p>
+                </div>
+            </div>
+            {% empty %}
+                <center><h5 style="font-size: 30px; margin-top: 200px">Нет комментариев</h5></center>
+        {% endfor %}
+    </div>
+{% endblock %}
