@@ -21,7 +21,9 @@ class PostListView(ListView, LoginRequiredMixin):
     context_object_name = 'posts'
 
     def get_queryset(self):
-        return Post.objects.all()
+        subscribed_users = self.request.user.subscription_users.all()
+        subscribed_posts = Post.objects.filter(author__in=subscribed_users).order_by('-created')
+        return subscribed_posts
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
