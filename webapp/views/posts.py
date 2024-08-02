@@ -33,6 +33,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        self.request.user.publication_count += 1
+        self.request.user.save()
         return super().form_valid(form)
 
     def get_success_url(self):
