@@ -1,0 +1,235 @@
+[
+{
+  "model": "webapp.post",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "image": "posts/scale_1200.jpeg",
+    "description": "super chocolade",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-07-30T17:05:34.364Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "image": "posts/istockphoto-157677814-612x612.jpg",
+    "description": "super",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-07-30T17:12:33.510Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "image": "posts/1692246218_kartinki-pibig-info-p-molochnii-shokolad-kartinki-krasivo-62.jpg",
+    "description": "puper",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-07-30T17:12:41.879Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 4,
+  "fields": {
+    "author": 3,
+    "image": "posts/drake-lil-yatchy-realization.jpg",
+    "description": "Drake",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-07-30T19:14:40.431Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "image": "posts/zh_62413117_orig_.jpeg",
+    "description": "Не знаю что это",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-08-01T09:58:17.939Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "image": "posts/42bf9ba1ea9de36eee986b01fc954124.jpg",
+    "description": "Я админ",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-08-02T08:14:33.315Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 7,
+  "fields": {
+    "author": 1,
+    "image": "posts/1352190.png",
+    "description": "ДА админ",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-08-02T08:15:08.571Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 8,
+  "fields": {
+    "author": 3,
+    "image": "posts/09c4e073091275ff1bf6d074774c5188.png",
+    "description": "Какаято фотка",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-08-02T08:29:34.211Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.post",
+  "pk": 9,
+  "fields": {
+    "author": 1,
+    "image": "posts/IMG-d66c1f57b3a7d264c9b36b7f49ff91b0-V-1024x554.jpg",
+    "description": "Team lead",
+    "likes": 0,
+    "comments": 0,
+    "created": "2024-08-02T08:35:11.557Z",
+    "users_likes": []
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "text": "Классный пост",
+    "post": 1,
+    "created": "2024-07-31T16:30:07.039Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "author": 3,
+    "text": "Согласен классный пост",
+    "post": 1,
+    "created": "2024-07-31T16:30:48.040Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "text": "Вкусный наверное",
+    "post": 2,
+    "created": "2024-08-01T17:42:10.191Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 4,
+  "fields": {
+    "author": 3,
+    "text": "Хз вообще, думаю да\r\nмонолог крутой получается :)",
+    "post": 2,
+    "created": "2024-08-01T17:43:19.159Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "text": "Ого чекну что тут",
+    "post": 1,
+    "created": "2024-08-01T17:47:29.748Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "text": "Love Drake",
+    "post": 4,
+    "created": "2024-08-02T08:08:18.986Z"
+  }
+},
+{
+  "model": "accounts.myuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$FWwrfDFd8HHPPE9Yv7bLTX$vJ9SICHiAADGGqsFwfWkb7Vuptrnb1mas8RwpPD0zLM=",
+    "last_login": "2024-08-02T08:49:10.632Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-07-29T18:52:22.833Z",
+    "email": "admin@gmail.com",
+    "avatar": "avatars/zh_62413117_orig_.jpeg",
+    "info": "Сходка админов MDK",
+    "phone": "0707669927",
+    "gender": "Male",
+    "publication_count": 7,
+    "subscription_count": 1,
+    "following_count": 1,
+    "groups": [],
+    "user_permissions": [],
+    "subscription_users": [
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.myuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$5uAi0uB6CxmNhHqAPs84l6$ml1WZn6rTHyJbPWldplyAQpr1pKdkKcUyuRauApPTgk=",
+    "last_login": "2024-08-02T08:47:55.332Z",
+    "is_superuser": false,
+    "username": "adam1",
+    "first_name": "Adam1",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-30T18:15:53.529Z",
+    "email": "adam1@gmail.com",
+    "avatar": "avatars/---------------1.jpg",
+    "info": "",
+    "phone": "0707669927",
+    "gender": "Other",
+    "publication_count": 2,
+    "subscription_count": 1,
+    "following_count": 1,
+    "groups": [],
+    "user_permissions": [],
+    "subscription_users": [
+      1
+    ]
+  }
+}
+]
