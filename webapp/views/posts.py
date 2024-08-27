@@ -6,16 +6,6 @@ from webapp.forms import PostForm
 from django.http import JsonResponse
 
 
-class LikePostsUser(LoginRequiredMixin, View):
-    def get(self, request, pk, *args, **kwargs):
-        public = get_object_or_404(Post, pk=pk)
-        if request.user in public.users_likes.all():
-            public.users_likes.remove(request.user)
-        else:
-            public.users_likes.add(request.user)
-        return redirect('webapp:home')
-
-
 class PostListView(ListView, LoginRequiredMixin):
     template_name = 'home.html'
     context_object_name = 'posts'
